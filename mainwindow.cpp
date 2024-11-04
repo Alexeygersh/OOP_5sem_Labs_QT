@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "ChangeDialog.h"
 #include "PlayerDialog.h"
 #include "OnlinePlayerDialog.h"
+
+#include <QResizeEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,11 +12,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Создаем виджет для отрисовки таблицы игроков
+    // виджет для отрисовки таблицы игроков
     playerTableWidget = new PlayerTableWidget(playerContainer, this);
 
-    // Устанавливаем виджет для scrollArea
+    // виджет для scrollArea
     ui->scrollArea->setWidget(playerTableWidget);
+    ui->scrollArea->setWidgetResizable(true);
 
     connect(ui->actionPlayer, &QAction::triggered, this, &MainWindow::onAddPlayer);
     connect(ui->actionOnlinePlayer, &QAction::triggered, this, &MainWindow::onAddOnlinePlayer);
@@ -22,8 +25,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionLoad, &QAction::triggered, this, &MainWindow::onLoadFromFile);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::onSaveToFile);
 
-    //connect(ui->displayPlayersButton, &QPushButton::clicked, this, &MainWindow::onDisplayPlayers);
-    connect(ui->clearButton, &QPushButton::clicked, this, &MainWindow::onClearPlayers);
+    connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onChangePlayers);
+    connect(ui->actionClear, &QAction::triggered, this, &MainWindow::onClearPlayers);
+
+    //changeDialog = new ChangeDialog(this, &playerContainer);
+    //connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onChangePlayers);
 }
 
 
@@ -41,14 +47,11 @@ void MainWindow::onAddPlayer() {
 }
 
 void MainWindow::onPlayerAdded(const std::shared_ptr<Player>& player) {
-    // Добавляем игрока в контейнер
-    playerContainer.addPlayer(player);
-
-    // Обновляем таблицу или интерфейс для отображения игроков
-    playerTableWidget->update();  // Обновление таблицы игроков
+    playerContainer.addPlayer(player); // Добавляем игрока в контейнер
+    playerTableWidget->update();  // Обновление таблицы
 }
 
-//
+
 
 void MainWindow::onAddOnlinePlayer() {
     OnlinePlayerDialog *dialog = new OnlinePlayerDialog(this);
@@ -60,14 +63,20 @@ void MainWindow::onAddOnlinePlayer() {
 }
 
 void MainWindow::onOnlinePlayerAdded(const std::shared_ptr<OnlinePlayer>& onlinePlayer) {
-    playerContainer.addPlayer(onlinePlayer); // Добавляем игрока в контейнер
+    playerContainer.addPlayer(onlinePlayer);
     playerTableWidget->update();
 }
 
 
-// void MainWindow::onDisplayPlayers() {
-//     playerTableWidget->update();
-// }
+void MainWindow::onChangePlayers() {
+
+    // EditPlayerDialog dialog(&playerContainer, this);
+    // dialog.exec();
+    // playerTableWidget->update();
+
+    //changeDialog->populateList();
+    //changeDialog->exec();
+}
 
 
 
@@ -89,5 +98,23 @@ void MainWindow::onSaveToFile() {
 void MainWindow::onClearPlayers() {
     playerContainer.clearPlayers();
     playerTableWidget->update();
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    // размер QScrollArea
+    int scrollAreaWidth = this->width() - 40;
+    int scrollAreaHeight = this->height() - 100;
+    ui->scrollArea->resize(scrollAreaWidth, scrollAreaHeight);
+    ui->scrollArea->move(20, 20);
+
+    // QLineEdit
+    int lineEditWidth = scrollAreaWidth;
+    int lineEditHeight = 21;
+    int lineEditY = ui->scrollArea->geometry().bottom();
+
+    ui->lineEdit->resize(lineEditWidth, lineEditHeight);
+    ui->lineEdit->move(20, lineEditY);
+
+    QMainWindow::resizeEvent(event);
 }
 

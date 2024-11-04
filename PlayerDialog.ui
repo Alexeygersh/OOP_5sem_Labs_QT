@@ -14,139 +14,232 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(195, 167, 112);
-border: 1px solid rgb(38, 39, 40);
-color: rgb(0, 0, 0);</string>
+   <string notr="true">selection-background-color: rgb(170, 170, 127);
+selection-color: rgb(170, 0, 0);
+background-color: rgb(195, 167, 112);</string>
   </property>
-  <widget class="QSpinBox" name="ageSpinBox">
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>130</y>
-     <width>261</width>
-     <height>51</height>
+     <x>40</x>
+     <y>30</y>
+     <width>531</width>
+     <height>491</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(195, 167, 112);
+border-radius: 5px;
+color: rgb(0, 0, 0);
+border: 1px solid  rgb(195, 167, 112);
+
+
+</string>
    </property>
-   <property name="specialValueText">
-    <string>Возраст</string>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
    </property>
-   <property name="maximum">
-    <number>120</number>
+   <property name="widgetResizable">
+    <bool>true</bool>
    </property>
-  </widget>
-  <widget class="QCheckBox" name="checkBox">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>410</y>
-     <width>261</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Активность</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="nameEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>50</y>
-     <width>261</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="placeholderText">
-    <string>Имя</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="registrationDateEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>340</y>
-     <width>261</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="placeholderText">
-    <string>Дата регистрации</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="ratingSpinBox">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>200</y>
-     <width>261</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="specialValueText">
-    <string>Рейтинг</string>
-   </property>
-   <property name="maximum">
-    <number>3000</number>
-   </property>
-   <property name="singleStep">
-    <number>50</number>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="genderComboBox">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>270</y>
-     <width>261</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="placeholderText">
-    <string>Пол</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Мужской</string>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>529</width>
+      <height>489</height>
+     </rect>
     </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Женский</string>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
-   </item>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>390</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Активность</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="registrationDateEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>320</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="placeholderText">
+      <string>Дата регистрации</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ageLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>100</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="placeholderText">
+      <string>Возраст</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>390</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 3px solid rgb(0, 0, 0);
+background-color: rgb(195, 167, 112);
+color: #333;
+padding: 5px;
+</string>
+     </property>
+     <property name="text">
+      <string>Подтвердить</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nameEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Имя</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ratingLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>170</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="placeholderText">
+      <string>Рейтинг</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="maleRadioButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>240</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string>M</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Мужской</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="femaleRadioButton">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>240</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleName">
+      <string>F</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Женский</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

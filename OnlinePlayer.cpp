@@ -1,31 +1,9 @@
 #include "OnlinePlayer.h"
-//#include "utils.h"
 
 
 OnlinePlayer::OnlinePlayer() : virtual_name("unknown"), email("unknown@gmail.com"), tel(9909990100) {}
 
 OnlinePlayer::~OnlinePlayer() {}
-
-
-// void OnlinePlayer::readFromConsole() {
-//     Player::readFromConsole();
-
-//     std::cout << "Введите ник: ";
-//     std::cin.ignore();
-//     std::getline(std::cin, virtual_name);
-
-//     std::cout << "Введите адрес почты: ";
-//     std::cin.ignore();
-//     std::getline(std::cin, email);
-
-//     std::cout << "Введите номер телефона в виде 9991010010: (+7)";
-//     tel = InputNum<unsigned long long int>(1000000000, 9999999999);
-// }
-
-// void OnlinePlayer::displayToConsole() const {
-//     Player::displayToConsole(); // Сначала выводим данные базового класса
-//     std::cout << "Ник пользователя: " << virtual_name << ", Адрес почты: " << email << ", Номер телефона: +7" << tel << std::endl;
-// }
 
 void OnlinePlayer::readFromFile(std::ifstream& inputFile) {
 

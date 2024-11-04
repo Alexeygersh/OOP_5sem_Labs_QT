@@ -1,44 +1,6 @@
 #include "Player.h"
 //#include "utils.h"
 
-
-// void Player::readFromConsole() {
-
-//     std::cout << "Введите имя: ";
-//     std::cin.ignore();
-//     std::getline(std::cin, name);
-
-//     std::cout << "Введите возраст (0-120): ";
-//     age = InputNum<int>(0, 120);
-
-//     std::cout << "Введите рейтинг (0-3000): ";
-//     rating = InputNum<int>(0, 3000);
-
-//     std::cout << "Введите пол | '0' для Мужского пола или '1' для женского: ";
-//     bool genderInput = InputNum<bool>(0, 1);
-//     gender = (genderInput == 0) ? 'M' : 'F';
-
-//     std::cin.ignore();
-
-//     std::cout << "Введите дату регистрации (DD-MM-YYYY): ";
-//     std::getline(std::cin, registrationDate);
-
-//     std::cout << "Игрок активен в данный момент? (1 - да, 0 - нет): ";
-//     isActive = InputNum<bool>(0, 1);
-
-// }
-
-// void Player::displayToConsole() const {
-//     std::cout << " Имя: " << name
-//               << ", Возраст: " << age
-//               << ", Рейтинг: " << rating
-//               << ", Пол: " << (gender == 0 ? 'M' : 'F')
-//               << ", Дата регистрации: " << registrationDate
-//               << ", Активен?: " << (isActive ? "Да" : "Нет")
-//               << std::endl;
-// }
-
-
 void Player::readFromFile(std::ifstream& inputFile) {
     //inputFile >> id;
     //inputFile.ignore();
@@ -75,7 +37,7 @@ void Player::draw(QPainter& painter, int startX, int startY, int columnWidth, in
     painter.drawText(startX + columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getAge()));
     painter.drawText(startX + 2 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getRating()));
     QString q;
-    if (std::to_string(getGender()) == "-52"){q = "М";} else {q = "Ж";}
+    if (std::to_string(getGender()) == "M"){q = "М";} else {q = "Ж";}
     painter.drawText(startX + 3 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, q);
     painter.drawText(startX + 4 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::fromStdString(getRegistrationDate()));
     painter.drawText(startX + 5 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getisActive()));

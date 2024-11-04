@@ -16,15 +16,18 @@ public:
     explicit OnlinePlayerDialog(QWidget *parent = nullptr);
     ~OnlinePlayerDialog();
 
-    //std::shared_ptr<OnlinePlayer> getOnlinePlayerData() const; // Метод для получения данных из диалога
+public slots:
+    void onAddPlayerButtonClicked();
+
 signals:
     void onlinePlayerAdded(const std::shared_ptr<OnlinePlayer>& onlinePlayer); // Сигнал для добавления игрока
 
-protected:
-    void closeEvent(QCloseEvent *event) override; // Переопределяем обработку закрытия окна
-
 private:
     Ui::OnlinePlayerDialog *ui;
+    std::shared_ptr<OnlinePlayer> createPlayerFromInputs();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 };
 
 #endif // ONLINEPLAYERDIALOG_H

@@ -59,6 +59,8 @@ public:
     void draw(QPainter& painter, int startX, int startY, int columnWidth, int rowHeight) const;
     QSize calculateSize(int columnWidth, int rowHeight) const;
 
+    bool isMale() const { return gender == 'M'; }
+
 };
 
 

@@ -24,10 +24,9 @@ public:
     PlayerContainer() = default;
     ~PlayerContainer() = default;
 
-    //void addPlayer();
-    void addPlayer(const std::shared_ptr<Player>& player) {
-        players.push_back(player);
-    }
+    void addPlayer(const std::shared_ptr<Player>& player);
+    void removePlayer(int index);
+
     void addOnlinePlayer();
     //void displayPlayers() const;
     void readFromFile(const std::string& filename);
@@ -35,6 +34,19 @@ public:
     void clearPlayers();
 
     const std::vector<std::shared_ptr<Player>>& getPlayers() const { return players; }
+
+    std::vector<std::shared_ptr<Player>>::const_iterator begin() const { return players.cbegin(); }
+    std::vector<std::shared_ptr<Player>>::const_iterator end() const { return players.cend(); }
+
+    std::shared_ptr<Player> getPlayer(int index) const {
+        if (index >= 0 && index < players.size()) {
+            return players[index];
+        }
+        return nullptr;
+    }
+
+
+
 };
 
 

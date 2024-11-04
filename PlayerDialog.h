@@ -17,18 +17,21 @@ public:
     explicit PlayerDialog(QWidget *parent = nullptr);
     ~PlayerDialog();
 
-    //Player getPlayerData() const;
+public slots:
+    void onAddPlayerButtonClicked();
 
 signals:
     void playerAdded(const std::shared_ptr<Player>& player);
 
-protected:
-    void closeEvent(QCloseEvent *event) override;
+// protected:
+//     void closeEvent(QCloseEvent *event) override;
 
 private:
     Ui::PlayerDialog *ui;
-    //std::shared_ptr<Player> player;
     std::shared_ptr<Player> createPlayerFromInputs();
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 };
 
 #endif // PLAYERDIALOG_H

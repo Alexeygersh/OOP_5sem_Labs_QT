@@ -26,3 +26,13 @@ void PlayerContainer::writeToFile(const std::string& filename) const {
 void PlayerContainer::clearPlayers() {
     players.clear();
 }
+
+void PlayerContainer::removePlayer(int index) {
+    if (index >= 0 && index < players.size()) {
+        players.erase(players.begin() + index);
+    }
+}
+
+void PlayerContainer::addPlayer(const std::shared_ptr<Player>& player) {
+    players.push_back(player);
+}

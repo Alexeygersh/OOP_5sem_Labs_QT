@@ -2,6 +2,7 @@
 
 #include "PlayerContainer.h"
 #include "Player_table.h"
+#include "ChangeDialog.h"
 
 #include <QMainWindow>
 #include <QFileDialog>
@@ -22,7 +23,7 @@ public:
 private slots:
     void onAddPlayer();
     void onAddOnlinePlayer();
-    //void onDisplayPlayers();
+    void onChangePlayers();
     void onLoadFromFile();
     void onSaveToFile();
     void onClearPlayers();
@@ -34,5 +35,9 @@ private:
     Ui::MainWindow *ui;
     PlayerContainer playerContainer;
     PlayerTableWidget* playerTableWidget;
+    //ChangeDialog* changeDialog;
+
+protected:
+    void resizeEvent(QResizeEvent *event) override;
 
 };

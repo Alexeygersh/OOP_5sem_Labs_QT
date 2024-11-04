@@ -6,20 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
-    <height>820</height>
+    <width>901</width>
+    <height>808</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>900</width>
-    <height>820</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>900</width>
-    <height>820</height>
+    <width>20000</width>
+    <height>20000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -35,66 +41,26 @@ selection-color: rgb(170, 0, 0);
    <enum>QTabWidget::TabShape::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="displayPlayersButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>20</y>
-      <width>141</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(170, 170, 127);
-</string>
-    </property>
-    <property name="text">
-     <string>Change</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="clearButton">
-    <property name="geometry">
-     <rect>
-      <x>730</x>
-      <y>20</y>
-      <width>141</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(170, 170, 127);</string>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>90</y>
+      <y>20</y>
       <width>861</width>
-      <height>631</height>
+      <height>701</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(195, 167, 112);
-</string>
+border: 1px solid rgb(0, 0, 0);
+color: rgb(0, 0, 0);
+border-radius: 5px</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Shape::StyledPanel</enum>
@@ -123,7 +89,7 @@ background-color: rgb(170, 170, 127);</string>
        <x>0</x>
        <y>0</y>
        <width>859</width>
-       <height>629</height>
+       <height>699</height>
       </rect>
      </property>
      <property name="contextMenuPolicy">
@@ -141,10 +107,16 @@ background-color: rgb(170, 170, 127);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>720</y>
+      <y>730</y>
       <width>871</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="layoutDirection">
      <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -154,7 +126,10 @@ background-color: rgb(170, 170, 127);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ</string>
+     <string>･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ･✻･ﾟ･✻･ﾟﾟ</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -167,7 +142,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>900</width>
+     <width>901</width>
      <height>28</height>
     </rect>
    </property>
@@ -226,6 +201,8 @@ background-color: rgb(170, 170, 127);</string>
     <addaction name="menuNew"/>
     <addaction name="actionLoad"/>
     <addaction name="actionSave"/>
+    <addaction name="actionChange"/>
+    <addaction name="actionClear"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -247,6 +224,16 @@ background-color: rgb(170, 170, 127);</string>
   <action name="actionOnlinePlayer">
    <property name="text">
     <string>OnlinePlayer</string>
+   </property>
+  </action>
+  <action name="actionChange">
+   <property name="text">
+    <string>Change</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="text">
+    <string>Clear</string>
    </property>
   </action>
  </widget>

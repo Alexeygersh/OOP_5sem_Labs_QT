@@ -1,4 +1,5 @@
 #include "Player_table.h"
+#include <QScrollArea>
 
 PlayerTableWidget::PlayerTableWidget(PlayerContainer& container, QWidget *parent)
     : QWidget(parent), playerContainer(container) {}
@@ -11,7 +12,7 @@ void PlayerTableWidget::paintEvent(QPaintEvent *event) {
     int rowHeight = 50;
     int columnWidth = 100;
 
-    QStringList headers = {"Имя", "Возраст", "Рейтинг", "Пол", "Регистрация", "Активность", "Никнейм", "Почта", "Телефон"};
+    QStringList headers = {"Имя", "Возраст", "Рейтинг", "Пол", "Дата", "Активность", "Никнейм", "Почта", "Телефон"};
 
     // Рисуем заголовки таблицы
     for (int i = 0; i < headers.size(); ++i) {
