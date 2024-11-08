@@ -21,21 +21,16 @@ public:
     ~MainWindow();
 
 private slots:
-    void onAddPlayer();
-    void onAddOnlinePlayer();
     void onChangePlayers();
     void onLoadFromFile();
     void onSaveToFile();
     void onClearPlayers();
 
-    void onPlayerAdded(const std::shared_ptr<Player>& player); // Слот для добавления игрока
-    void onOnlinePlayerAdded(const std::shared_ptr<OnlinePlayer>& onlineplayer);
-
 private:
     Ui::MainWindow *ui;
     PlayerContainer playerContainer;
     PlayerTableWidget* playerTableWidget;
-    //ChangeDialog* changeDialog;
+    ChangeDialog* changeDialog;
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

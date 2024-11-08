@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ChangeDialog.h"
-#include "PlayerDialog.h"
-#include "OnlinePlayerDialog.h"
 
 #include <QResizeEvent>
 
@@ -19,17 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->scrollArea->setWidget(playerTableWidget);
     ui->scrollArea->setWidgetResizable(true);
 
-    connect(ui->actionPlayer, &QAction::triggered, this, &MainWindow::onAddPlayer);
-    connect(ui->actionOnlinePlayer, &QAction::triggered, this, &MainWindow::onAddOnlinePlayer);
-
     connect(ui->actionLoad, &QAction::triggered, this, &MainWindow::onLoadFromFile);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::onSaveToFile);
 
     connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onChangePlayers);
     connect(ui->actionClear, &QAction::triggered, this, &MainWindow::onClearPlayers);
 
-    //changeDialog = new ChangeDialog(this, &playerContainer);
-    //connect(ui->actionChange, &QAction::triggered, this, &MainWindow::onChangePlayers);
+    changeDialog = new ChangeDialog(this, &playerContainer);
+
 }
 
 
@@ -39,43 +34,14 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::onAddPlayer() {
-    PlayerDialog dialog(this);
-    // Подключение сигнала playerAdded к слоту onPlayerAdded
-    connect(&dialog, &PlayerDialog::playerAdded, this, &MainWindow::onPlayerAdded);
-    dialog.exec();
-}
-
-void MainWindow::onPlayerAdded(const std::shared_ptr<Player>& player) {
-    playerContainer.addPlayer(player); // Добавляем игрока в контейнер
-    playerTableWidget->update();  // Обновление таблицы
-}
-
-
-
-void MainWindow::onAddOnlinePlayer() {
-    OnlinePlayerDialog *dialog = new OnlinePlayerDialog(this);
-
-    // Подключаем сигнал к слоту для добавления игрока в контейнер
-    connect(dialog, &OnlinePlayerDialog::onlinePlayerAdded, this, &MainWindow::onOnlinePlayerAdded);
-
-    dialog->open(); // Открываем диалоговое окно
-}
-
-void MainWindow::onOnlinePlayerAdded(const std::shared_ptr<OnlinePlayer>& onlinePlayer) {
-    playerContainer.addPlayer(onlinePlayer);
-    playerTableWidget->update();
-}
-
-
 void MainWindow::onChangePlayers() {
 
     // EditPlayerDialog dialog(&playerContainer, this);
     // dialog.exec();
     // playerTableWidget->update();
 
-    //changeDialog->populateList();
-    //changeDialog->exec();
+    changeDialog->populateList();
+    changeDialog->exec();
 }
 
 

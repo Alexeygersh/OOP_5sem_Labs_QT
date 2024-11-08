@@ -36,3 +36,11 @@ void PlayerContainer::removePlayer(int index) {
 void PlayerContainer::addPlayer(const std::shared_ptr<Player>& player) {
     players.push_back(player);
 }
+
+
+void PlayerContainer::updatePlayer(int index, std::shared_ptr<Player> newPlayer) {
+    if (index >= 0 && index < players.size()) {
+        players[index] = newPlayer;
+    }
+}
+

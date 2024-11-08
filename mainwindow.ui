@@ -182,29 +182,26 @@ selection-background-color: rgb(170, 170, 127);</string>
     <property name="separatorsCollapsible">
      <bool>false</bool>
     </property>
-    <widget class="QMenu" name="menuNew">
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(170, 170, 127);</string>
-     </property>
-     <property name="title">
-      <string>New</string>
-     </property>
-     <addaction name="actionPlayer"/>
-     <addaction name="actionOnlinePlayer"/>
-    </widget>
-    <addaction name="menuNew"/>
     <addaction name="actionLoad"/>
     <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menuUtils">
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+selection-color: rgb(170, 0, 0);
+border-color: rgb(0, 0, 0);
+gridline-color: rgb(0, 0, 0);
+background-color: rgb(170, 170, 127);
+selection-background-color: rgb(170, 170, 127);</string>
+    </property>
+    <property name="title">
+     <string>Utils</string>
+    </property>
     <addaction name="actionChange"/>
     <addaction name="actionClear"/>
    </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuUtils"/>
   </widget>
   <action name="actionLoad">
    <property name="text">
@@ -230,10 +227,20 @@ background-color: rgb(170, 170, 127);</string>
    <property name="text">
     <string>Change</string>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionClear">
    <property name="text">
     <string>Clear</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </action>
  </widget>

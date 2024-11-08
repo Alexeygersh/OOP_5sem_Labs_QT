@@ -37,7 +37,7 @@ void Player::draw(QPainter& painter, int startX, int startY, int columnWidth, in
     painter.drawText(startX + columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getAge()));
     painter.drawText(startX + 2 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getRating()));
     QString q;
-    if (std::to_string(getGender()) == "M"){q = "М";} else {q = "Ж";}
+    if ((getGender() == 'M') || ((std::to_string(getGender())) == "-52") ){q = "М";} else {q = "Ж";}
     painter.drawText(startX + 3 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, q);
     painter.drawText(startX + 4 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::fromStdString(getRegistrationDate()));
     painter.drawText(startX + 5 * columnWidth, startY, columnWidth, rowHeight, Qt::AlignCenter, QString::number(getisActive()));

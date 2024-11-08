@@ -28,7 +28,6 @@ public:
     void removePlayer(int index);
 
     void addOnlinePlayer();
-    //void displayPlayers() const;
     void readFromFile(const std::string& filename);
     void writeToFile(const std::string& filename) const;
     void clearPlayers();
@@ -45,6 +44,7 @@ public:
         return nullptr;
     }
 
+    void updatePlayer(int index, std::shared_ptr<Player> newPlayer);
 
 
 };
